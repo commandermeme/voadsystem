@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
+
+Route::resource('clients', 'ClientsController');
+Route::resource('vehicles', 'VehiclesController');
+Route::resource('records', 'RecordsController');
+Route::resource('maps', 'MapsController');
