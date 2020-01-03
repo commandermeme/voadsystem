@@ -62,11 +62,12 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+  font-family: 'Courier New', Courier, monospace;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #23282c;
+  color: #17062b;
   text-align: left;
   background-color: #e4e5e6;
 }
@@ -5909,7 +5910,7 @@ a.close.disabled {
   -ms-flex-pack: end;
   justify-content: flex-end;
   padding: 1rem;
-  border-top: 1px solid #c8ced3;
+  /* border-top: 1px solid #c8ced3; */
   border-bottom-right-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem;
 }
@@ -12670,7 +12671,7 @@ canvas {
   flex-direction: column;
   padding: 0;
   color: #fff;
-  background: #17062b;
+  background: #20a8d8;
 }
 
 .sidebar .sidebar-close {
@@ -12798,7 +12799,7 @@ canvas {
   width: 1.09375rem;
   margin: 0 0.5rem 0 0;
   font-size: 0.875rem;
-  color: #73818f;
+  color: #fff;
   text-align: center;
 }
 
@@ -12809,7 +12810,7 @@ canvas {
 
 .sidebar .nav-link.active {
   color: #fff;
-  background: #20a8d8;
+  background: #17062b;
 }
 
 .sidebar .nav-link.active .nav-icon {
@@ -12818,7 +12819,7 @@ canvas {
 
 .sidebar .nav-link:hover {
   color: #fff;
-  background: #20a8d8;
+  background: #17062b;
 }
 
 .sidebar .nav-link:hover .nav-icon {
@@ -13076,7 +13077,7 @@ canvas {
   -ms-flex: 0 0 50px;
   flex: 0 0 50px;
   cursor: pointer;
-  background-color: #17062b;
+  background-color: #20a8d8;
   border: 0;
 }
 

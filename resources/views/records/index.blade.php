@@ -5,7 +5,7 @@
         <div class="animated fadeIn">
             <h2 class="my-4">Records</h2>
             <div class="card">
-                <div class="card-header bg-danger">
+                <div class="card-header bg-primary">
                     <i class="fa fa-warning"></i> <span class="lead">Records</span>
                 </div>
                 <div class="card-body">

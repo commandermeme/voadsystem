@@ -13,6 +13,12 @@ class VehiclesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $vehicles = Vehicle::all();
@@ -46,7 +52,7 @@ class VehiclesController extends Controller
         $vehicle->system_id = $request->system_id;
         $vehicle->save();
 
-        return redirect('vehicles');
+        return redirect('vehicles/'. $request->client_id);
 
     }
 
@@ -59,7 +65,9 @@ class VehiclesController extends Controller
     public function show($id)
     {
         $client = Client::find($id);
-        return view('vehicles.show')->with('client', $client);
+        $vehicles = Vehicle::where('client_id', $client->id)->get();
+
+        return view('vehicles.show')->with('client', $client)->with('vehicles', $vehicles);
     }
 
     /**
@@ -70,7 +78,8 @@ class VehiclesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $vehicle = Vehicle::find($id);
+        return view('vehicles.edit')->with('vehicle', $vehicle);
     }
 
     /**
@@ -82,7 +91,13 @@ class VehiclesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $vehicle = Vehicle::find($id);
+        $vehicle->type = $request->type;
+        $vehicle->plate_no = $request->plate_no;
+        $vehicle->system_id = $request->system_id;
+        $vehicle->save();
+
+        return redirect('vehicles/'. $vehicle->client_id);
     }
 
     /**
@@ -93,6 +108,9 @@ class VehiclesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $vehicle = Vehicle::find($id);
+        $vehicle->delete();
+        
+        return redirect('vehicles/'. $vehicle->client_id);
     }
 }

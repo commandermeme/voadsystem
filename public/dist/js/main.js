@@ -22,7 +22,7 @@ var cardChart1 = new Chart($('#card-chart1'), {
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [{
-      label: 'My First dataset',
+      label: 'Client List',
       backgroundColor: getStyle('--primary'),
       borderColor: 'rgba(255,255,255,.55)',
       data: [65, 59, 84, 84, 51, 55, 40]

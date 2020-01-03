@@ -7,15 +7,23 @@
 
 /* eslint-disable no-magic-numbers */
 $.validator.setDefaults({
-  submitHandler: function submitHandler() {
-    // eslint-disable-next-line no-alert
-    alert('submitted!');
-  }
+  // submitHandler: function submitHandler() {
+  //   // eslint-disable-next-line no-alert
+  //   alert('submitted!');
+  // }
 });
 $('#signupForm').validate({
   rules: {
     firstname: 'required',
     lastname: 'required',
+    fname: 'required',
+    lname: 'required',
+    address: 'required',
+    phone: 'required',
+    licence: 'required',
+    type: 'required',
+    plate_no: 'required',
+    system_id: 'required',
     username: {
       required: true,
       minlength: 2

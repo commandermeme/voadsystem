@@ -6,7 +6,7 @@
             <h2 class="my-4 text-dark"><i class="fa fa-home"></i> Dashboard</h2>
             <div class="row">
                 <div class="col-sm-6 col-lg-4">
-                    <div class="card text-white bg-success">
+                    <div class="card text-white bg-primary">
                         <div class="card-body pb-0">
                             <div class="btn-group float-right">
                                 <button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,7 +50,7 @@
                 </div>
                 <!-- /.col-->
                 <div class="col-sm-6 col-lg-4">
-                    <div class="card text-white bg-danger">
+                    <div class="card text-white bg-primary">
                         <div class="card-body pb-0">
                             <div class="btn-group float-right">
                                 <button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

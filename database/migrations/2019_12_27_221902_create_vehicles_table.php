@@ -17,7 +17,7 @@ class CreateVehiclesTable extends Migration
             $table->bigIncrements('id');
             $table->integer('client_id');
             $table->string('type')->nullable();
-            $table->integer('plate_no');
+            $table->string('plate_no')->nullable();
             $table->string('system_id')->nullable();
             $table->timestamps();
         });

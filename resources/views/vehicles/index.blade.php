@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="animated fadeIn">
-            
+            <h2 class="my-4">Vehicles</h2>
             <div class="card">
                 <div class="card-header bg-primary">
                     <i class="fa fa-car"></i> <span class="lead">Registered Vehicles</span>
@@ -29,8 +29,14 @@
                                             <td>{{ $vehicle->plate_no }}</td>
                                             <td>{{ $vehicle->system_id }}</td>
                                             <td>
-                                                <a href="#" class="btn btn-outline-primary"><i class="fa fa-edit"></i></a>
-                                                <a href="#" class="btn btn-outline-primary"><i class="fa fa-close"></i></a>
+                                                <div class="btn-group">
+                                                    <form action="{{ route('vehicles.destroy', $vehicle->id) }}" method="POST">
+                                                        @method('DELETE')
+                                                        @csrf
+
+                                                        <button type="submit" class="btn btn-outline-primary"><i class="fa fa-close"></i></button>
+                                                    </form>
+                                                </div>
                                             </td>
                                         </tr>
                                     @endif

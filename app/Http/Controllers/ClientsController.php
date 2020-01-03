@@ -13,6 +13,11 @@ class ClientsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $clients = Client::all();
@@ -57,7 +62,7 @@ class ClientsController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -68,7 +73,8 @@ class ClientsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $client = Client::find($id);
+        return view('clients.edit')->with('client', $client);
     }
 
     /**
@@ -80,7 +86,15 @@ class ClientsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $client = Client::find($id);
+        $client->fname = $request->fname;
+        $client->lname = $request->lname;
+        $client->address = $request->address;
+        $client->phone = $request->phone;
+        $client->licence = $request->licence;
+        $client->save();
+
+        return redirect('clients');
     }
 
     /**
@@ -91,6 +105,13 @@ class ClientsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $client = Client::find($id);
+        $client->delete();
+
+        if ($client->delete()) {
+            $vehicles = Vehicle::where('client_id', $client->id)->delete();
+        }
+
+        return redirect('clients');
     }
 }
