@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="animated fadeIn">
-            <h2 class="my-4">Map</h2>
+            <h2 class="my-4">Regulations</h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
@@ -44,6 +44,43 @@
                     </div>
                 </div>
             </div>
+
+            <div class="card">
+                <div class="card-header bg-primary">
+                    <i class="fa fa-map-signs"></i> <span class="lead">Registered Locations</span>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive-xl">
+                        <table  class="table table-striped table-borderless datatable">
+                            <thead>
+                                <tr>
+                                    <th>Address</th>
+                                    <th>Street</th>
+                                    <th>Speed Limit</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($rules as $rule)
+                                    <tr>
+                                        <td>{{ $rule->address }}</td>
+                                        <td>{{ $rule->street }}</td>
+                                        <td>{{ $rule->speed_limit }} km/h</td>
+                                        <td>
+                                            <form action="{{ route('maps.destroy', $rule->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+
+                                                <button type="submit" class="btn btn-outline-primary"><i class="fa fa-close"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -68,9 +105,8 @@
     function GetMap() {
                 var map = new Microsoft.Maps.Map('#myMap', {
                     center: new Microsoft.Maps.Location(10.297487, 123.896628),
-                    zoom:16,
+                    zoom:15,
                     minZoom: 8,
-                    
                 });
 
                 // var bounds = map.getCenter();

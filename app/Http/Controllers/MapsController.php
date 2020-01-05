@@ -97,6 +97,9 @@ class MapsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $rule = Rule::find($id);
+        $rule->delete();
+
+        return redirect('maps');
     }
 }

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="animated fadeIn">
-            <h2 class="my-4">Records</h2>
+            <h2 class="my-4">Violations</h2>
             <div class="card">
                 <div class="card-header bg-primary">
                     <i class="fa fa-warning"></i> <span class="lead">Records</span>

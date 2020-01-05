@@ -22,13 +22,13 @@
 
             <li class="nav-item nav-dropdown">
                 <a class="nav-link" href="{{ route('records.index') }}">
-                    <i class="nav-icon fa fa-warning"></i> Records
+                    <i class="nav-icon fa fa-warning"></i> Violations
                 </a>
             </li>
 
             <li class="nav-item nav-dropdown">
                 <a class="nav-link" href="{{ route('maps.index') }}">
-                    <i class="nav-icon fa fa-map-marker"></i> Maps
+                    <i class="nav-icon fa fa-map-marker"></i> Regulations
                 </a>
             </li>
         </ul>
