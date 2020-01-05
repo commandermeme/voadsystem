@@ -24,6 +24,9 @@ $('#signupForm').validate({
     type: 'required',
     plate_no: 'required',
     system_id: 'required',
+    street: 'required',
+    speed_limit: 'required',
+    location: 'required',
     username: {
       required: true,
       minlength: 2

@@ -22,7 +22,7 @@
 
             <li class="nav-item nav-dropdown">
                 <a class="nav-link" href="{{ route('records.index') }}">
-                    <i class="nav-icon fa fa-file-o"></i> Records
+                    <i class="nav-icon fa fa-warning"></i> Records
                 </a>
             </li>
 

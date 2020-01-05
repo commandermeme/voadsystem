@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Rule;
 
 class MapsController extends Controller
 {
@@ -18,7 +19,8 @@ class MapsController extends Controller
 
     public function index()
     {
-        return view('maps.index');
+        $rules = Rule::all();
+        return view('maps.index')->with('rules', $rules);
     }
 
     /**
@@ -39,7 +41,18 @@ class MapsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request_loc = $request->location;
+        $loc = explode(',', $request_loc);
+
+        $rule = new Rule;
+        $rule->address = $request->address;
+        $rule->street = $request->street;
+        $rule->speed_limit = $request->speed_limit;
+        $rule->latitude = $loc[0];
+        $rule->longitude = $loc[1];
+        $rule->save();
+
+        return redirect('maps');
     }
 
     /**
