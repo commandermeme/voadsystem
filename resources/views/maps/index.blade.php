@@ -50,7 +50,7 @@
     <script type='text/javascript'>
         var location_map = [
             @foreach ($rules as $rule)
-                [ '{{ $rule->latitude }}', '{{ $rule->longitude }}' ],
+                [ '{{ $rule->latitude }}', '{{ $rule->longitude }}', '{{ $rule->street }}', '{{ $rule->speed_limit }}' ],
             @endforeach
         ];
     </script>
@@ -98,7 +98,7 @@
                     });
                     
                     var input = document.createElement('input');
-                        input.type = 'text';
+                        input.type = 'hidden';
                         input.name = 'location';
                         // input.value = String(result.location);
                         var loc = String(result.location);
@@ -116,8 +116,8 @@
                         icon: icon,	
                         anchor: new Microsoft.Maps.Point(10, 32),	
                         color: '#20a8d8',
-                        text: '25', 
-                        title: 'Main Pin', 
+                        text: location_map[i][3], 
+                        title: location_map[i][2], 
                         // subTitle: 'Subtitle',
                     });
                     map.entities.push(pushpin);
