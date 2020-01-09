@@ -8,18 +8,11 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="card text-white bg-primary">
                         <div class="card-body pb-0">
-                            <div class="btn-group float-right">
-                                <button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="icon-people"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
+                            <div class="h1 float-right">
+                                <i class="icon-people"></i>
                             </div>
-                            <div class="text-value">25</div>
-                            <div>Client</div>
+                            <div class="text-value">{{ $clients }}</div>
+                            <div>Client(s)</div>
                         </div>
                         <div class="chart-wrapper mt-3" style="height:70px;">
                             <canvas class="chart" id="card-chart3" height="70"></canvas>
@@ -30,18 +23,11 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="card text-white bg-primary">
                         <div class="card-body pb-0">
-                            <div class="btn-group float-right">
-                                <button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-car"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
+                            <div class="h1 float-right">
+                                <i class="fa fa-car"></i>
                             </div>
-                            <div class="text-value">100</div>
-                            <div>Vehicles</div>
+                            <div class="text-value">{{ $vehicles }}</div>
+                            <div>Vehicle(s)</div>
                         </div>
                         <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
                             <canvas class="chart" id="card-chart1" height="70"></canvas>
@@ -52,18 +38,11 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="card text-white bg-primary">
                         <div class="card-body pb-0">
-                            <div class="btn-group float-right">
-                                <button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-warning"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
+                            <div class="h1 float-right">
+                                <i class="fa fa-warning"></i>
                             </div>
-                            <div class="text-value">56</div>
-                            <div>Violations</div>
+                            <div class="text-value">0</div>
+                            <div>Violation(s)</div>
                         </div>
                         <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
                         <canvas class="chart" id="card-chart4" height="70"></canvas>

@@ -71,7 +71,7 @@ var cardChart2 = new Chart($('#card-chart2'), {
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [{
-      label: 'My First dataset',
+      label: 'Client',
       backgroundColor: getStyle('--info'),
       borderColor: 'rgba(255,255,255,.55)',
       data: [1, 18, 9, 17, 34, 22, 11]
@@ -121,10 +121,10 @@ var cardChart3 = new Chart($('#card-chart3'), {
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [{
-      label: 'My First dataset',
+      label: 'Amaw',
       backgroundColor: 'rgba(255,255,255,.2)',
       borderColor: 'rgba(255,255,255,.55)',
-      data: [78, 81, 80, 45, 34, 12, 40]
+      data: [0, 0, 0, 0, 0, 0, 0]
     }]
   },
   options: {
@@ -151,7 +151,8 @@ var cardChart3 = new Chart($('#card-chart3'), {
       }
     }
   }
-}); // eslint-disable-next-line no-unused-vars
+}); 
+// eslint-disable-next-line no-unused-vars
 
 var cardChart4 = new Chart($('#card-chart4'), {
   type: 'bar',

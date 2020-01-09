@@ -16,3 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('trackings', 'Api\TrackingsController@create')->name('trackings.create');
+// Route::post('trackings', 'Api\TrackingsController@store')->name('trackings.store');
+
+Route::get('trackings/latitude={lat}&longitude={long}&speed={speed}&system={system_id}', 'Api\TrackingsController@store')->name('trackings.store');

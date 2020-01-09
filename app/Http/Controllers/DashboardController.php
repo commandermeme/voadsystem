@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Client;
+use App\Vehicle;
 
 class DashboardController extends Controller
 {
@@ -23,6 +25,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $clients = Client::all()->count();
+        $vehicles = Vehicle::all()->count();
+        
+        return view('dashboard')->with('clients', $clients)->with('vehicles', $vehicles);
     }
 }

@@ -106,10 +106,9 @@ class ClientsController extends Controller
     public function destroy($id)
     {
         $client = Client::find($id);
-        $client->delete();
 
         if ($client->delete()) {
-            $vehicles = Vehicle::where('client_id', $client->id)->delete();
+            Vehicle::where('client_id', $id)->delete();
         }
 
         return redirect('clients');
