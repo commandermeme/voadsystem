@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Rule;
+use App\Area;
 
 class MapsController extends Controller
 {
@@ -20,7 +21,9 @@ class MapsController extends Controller
     public function index()
     {
         $rules = Rule::all();
-        return view('maps.index')->with('rules', $rules);
+        $areas = Area::all();
+
+        return view('maps.index')->with('rules', $rules)->with('areas', $areas);
     }
 
     /**
@@ -99,6 +102,18 @@ class MapsController extends Controller
     {
         $rule = Rule::find($id);
         $rule->delete();
+
+        return redirect('maps');
+    }
+
+    public function area(Request $request)
+    {
+        $area = new Area;
+        $area->latitude = $request->latitude;
+        $area->longitude = $request->longitude;
+        $area->area = $request->area;
+        $area->speed_limit = $request->speed_limit;
+        $area->save();
 
         return redirect('maps');
     }

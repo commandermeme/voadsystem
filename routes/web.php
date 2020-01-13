@@ -12,14 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    // return view('auth.login');
+    return redirect('login');
 });
 
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
+Route::post('/area', 'MapsController@area')->name('maps.area');
 
 Route::resource('clients', 'ClientsController');
 Route::resource('vehicles', 'VehiclesController');
 Route::resource('records', 'RecordsController');
 Route::resource('maps', 'MapsController');
+
+
