@@ -117,4 +117,12 @@ class MapsController extends Controller
 
         return redirect('maps');
     }
+
+    public function area_destroy($id)
+    {
+        $area = Area::find($id);
+        $area->delete();
+
+        return redirect('maps');
+    }
 }

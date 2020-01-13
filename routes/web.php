@@ -19,7 +19,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
+
 Route::post('/area', 'MapsController@area')->name('maps.area');
+
+Route::delete('/area/{id}', 'MapsController@area_destroy')->name('maps.area_destroy');
 
 Route::resource('clients', 'ClientsController');
 Route::resource('vehicles', 'VehiclesController');

@@ -131,7 +131,7 @@
 
             <div class="card">
                 <div class="card-header bg-primary">
-                    <i class="fa fa-map-signs"></i> <span class="lead">Registered Streets</span>
+                    <i class="fa fa-map-signs"></i> <span class="lead">Specific Streets</span>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive-xl">
@@ -152,6 +152,40 @@
                                         <td>{{ $rule->speed_limit }} km/h</td>
                                         <td>
                                             <form action="{{ route('maps.destroy', $rule->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+
+                                                <button type="submit" class="btn btn-outline-primary"><i class="fa fa-close"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header bg-primary">
+                    <i class="fa fa-map-signs"></i> <span class="lead">Accident Prone Areas</span>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive-xl">
+                        <table  class="table table-striped table-borderless datatable">
+                            <thead>
+                                <tr>
+                                    <th>Area</th>
+                                    <th>Speed Limit</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($areas as $area)
+                                    <tr>
+                                        <td>{{ $area->area }}</td>
+                                        <td>{{ $area->speed_limit }} km/h</td>
+                                        <td>
+                                            <form action="{{ route('maps.area_destroy', $area->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
 
