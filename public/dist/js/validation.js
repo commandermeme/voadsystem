@@ -103,6 +103,9 @@ $('#signupForm2').validate({
     street: 'required',
     speed_limit: 'required',
     location: 'required',
+    latitude: 'required',
+    longitude: 'required',
+    area: 'required',
     username: {
       required: true,
       minlength: 2
