@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use App\Rule;
+use App\Record;
 
 class TrackingsController extends Controller
 {
@@ -28,25 +29,38 @@ class TrackingsController extends Controller
         $rule = Rule::where('street', $result)->get();
 
         if (!$rule->isEmpty()) {
-            $data2 = array(
+            $data = array(
                 'street' => $rule[0]['street'],
                 'speed_limit' => $rule[0]['speed_limit'],
-                
+                'speed' => (int)$speed,
+                'violation' => 0
             );
-            
-            return $data2;
+
+            $data_violate = array(
+                'street' => $rule[0]['street'],
+                'speed_limit' => $rule[0]['speed_limit'],
+                'speed' => (int)$speed,
+                'violation' => 1
+            );
+
+            if ($speed > $rule[0]['speed_limit']) {
+                $record = new Record;
+                $record->system_id = $system_id;
+                $record->speed = (int)$speed;
+                $record->speed_limit = $rule[0]['speed_limit'];
+                $record->location = $rule[0]['street'];
+                $record->save();
+
+                return $data_violate;
+            } else {
+                return $data;
+            }
         } else {
-            return 'wala sa database';
+            $data_none = array(
+                'note' => 'N/A Location'
+            );
+
+            return $data_none;
         }
-        
-        
-        
-
-        // return $rule[0]['street'];
-
-        return $data2;
-        // return $partial_result;
     }
-
-    
 }

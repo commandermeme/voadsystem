@@ -21,14 +21,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+                            @foreach ($records as $record)
+                                <tr>
+                                    <td>{{ $record->system_id }}</td>
+                                    <td>{{ $record->speed }}</td>
+                                    <td>{{ $record->speed_limit }}</td>
+                                    <td>{{ $record->location }}</td>
+                                    <td>{{ $record->created_at }}</td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-primary"><i class="fa fa-close"></i></a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
