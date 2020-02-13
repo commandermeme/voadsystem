@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Client;
 use App\Vehicle;
+use App\Record;
 
 class DashboardController extends Controller
 {
@@ -27,7 +28,8 @@ class DashboardController extends Controller
     {
         $clients = Client::all()->count();
         $vehicles = Vehicle::all()->count();
+        $violations = Record::all()->count();
         
-        return view('dashboard')->with('clients', $clients)->with('vehicles', $vehicles);
+        return view('dashboard')->with('clients', $clients)->with('vehicles', $vehicles)->with('violations', $violations);
     }
 }

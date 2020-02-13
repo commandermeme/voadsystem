@@ -33,12 +33,13 @@
                                         <td>{{ $vehicle->system_id }}</td>
                                         <td>
                                             <div class="btn-group">
-                                                <a href="{{ route('vehicles.edit', $vehicle->id) }}" class="btn btn-outline-primary"><i class="fa fa-edit"></i></a>
-                                                <form class="d-inline" action="{{ route('vehicles.destroy', $vehicle->id) }}" method="POST">
+                                                <a href="{{ route('vehicles.edit', $vehicle->id) }}" class="btn btn-outline-primary mr-1"><i class="fa fa-edit"></i></a>
+                                                <form class="d-inline mr-1" action="{{ route('vehicles.destroy', $vehicle->id) }}" method="POST">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button type="submit" onclick="return confirm('Are you sure to delete?')" class="btn btn-outline-primary"><i class="fa fa-close"></i></button>
                                                 </form>
+                                                <a href="#" class="btn btn-outline-primary"><i class="fa fa-warning"></i></a>
                                             </div>
                                         </td>
                                     </tr>
@@ -70,7 +71,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="type">Type</label>
-                                            <input type="text" id="type" class="form-control" name="type">
+                                            <select id="type" class="form-control" name="type">
+                                                <option value="sedan">Sedan</option>
+                                                <option value="suv">SUV</option>
+                                                <option value="van">Van</option>
+                                                <option value="bus">Bus</option>
+                                                <option value="motorcyle">Motorcyle</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-6">

@@ -41,7 +41,7 @@
                             <div class="h1 float-right">
                                 <i class="fa fa-warning"></i>
                             </div>
-                            <div class="text-value">0</div>
+                            <div class="text-value">{{ $violations }}</div>
                             <div>Violation(s)</div>
                         </div>
                         <div class="chart-wrapper mt-3 mx-3" style="height:70px;">

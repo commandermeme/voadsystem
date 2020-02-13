@@ -35,10 +35,10 @@
                                         <td>{{ $client->phone }}</td>
                                         <td>
                                             <div class="btn-group">
-                                                <a href="{{ route('clients.edit', $client->id) }}" class="btn btn-outline-primary">
+                                                <a href="{{ route('clients.edit', $client->id) }}" class="btn btn-outline-primary mr-1">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
-                                                <form class="d-inline" action="{{ route('clients.destroy', $client->id) }}" method="POST">
+                                                <form class="d-inline mr-1" action="{{ route('clients.destroy', $client->id) }}" method="POST">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button type="submit" onclick="return confirm('Are you sure to delete?')" class="btn btn-outline-primary"><i class="fa fa-close"></i></button>

@@ -52,13 +52,13 @@ class TrackingsController extends Controller
                     $area_located = Area::where('id', $area_location)->get();
                     if (!$area_located->isEmpty()) {
                         $data = array(
-                            'area' => $area_located[0]['area'],
+                            'location' => $area_located[0]['area'],
                             'speed_limit' => $area_located[0]['speed_limit'],
                             'speed' => (int)$speed,
                             'violation' => 0
                         );
                         $data_violate = array(
-                            'area' => $area_located[0]['area'],
+                            'location' => $area_located[0]['area'],
                             'speed_limit' => $area_located[0]['speed_limit'],
                             'speed' => (int)$speed,
                             'violation' => 1
@@ -92,14 +92,14 @@ class TrackingsController extends Controller
             
             if (!$rule->isEmpty()) {
                 $data = array(
-                    'street' => $rule[0]['street'],
+                    'location' => $rule[0]['street'],
                     'speed_limit' => $rule[0]['speed_limit'],
                     'speed' => (int)$speed,
                     'violation' => 0
                 );
 
                 $data_violate = array(
-                    'street' => $rule[0]['street'],
+                    'location' => $rule[0]['street'],
                     'speed_limit' => $rule[0]['speed_limit'],
                     'speed' => (int)$speed,
                     'violation' => 1

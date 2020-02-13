@@ -34,8 +34,9 @@
                                                         @method('DELETE')
                                                         @csrf
 
-                                                        <button type="submit" class="btn btn-outline-primary"><i class="fa fa-close"></i></button>
+                                                        <button type="submit" onclick="return confirm('Are you sure to delete?')" class="btn btn-outline-primary mr-1"><i class="fa fa-close"></i></button>
                                                     </form>
+                                                    <a href="#" class="btn btn-outline-primary"><i class="fa fa-warning"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
