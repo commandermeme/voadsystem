@@ -18,6 +18,7 @@
     <link href="{{ asset('dist/vendors/ion-rangeslider/css/ion.rangeSlider.min.css') }}" rel="stylesheet">
 
     <!--Icons-->
+    <link rel="shortcut icon" href="{{ asset('dist/img/brand/favicon-voad-2.png') }}" type="image/png">
     {{-- <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('dist/vendors/@coreui/icons/css/coreui-icons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('dist/vendors/flag-icon-css/css/flag-icon.min.css') }}" rel="stylesheet">
