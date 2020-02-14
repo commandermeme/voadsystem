@@ -18,7 +18,10 @@ class TrackingsController extends Controller
         // return $lat;
         if ($lat == 0.000000) {
             $data_none = array(
-                'note' => 'N/A Location / Error!'
+                'location' => 'Error',
+                'speed_limit' => 'Error',
+                'speed' => 'Error',
+                'violation' => 'Error'
             );
 
             return $data_none;
@@ -121,7 +124,10 @@ class TrackingsController extends Controller
             
             else {
                 $data_none = array(
-                    'note' => 'N/A Location'
+                    'location' => 'NA',
+                'speed_limit' => 'NA',
+                'speed' => 'NA',
+                'violation' => 'NA'
                 );
 
                 return $data_none;
