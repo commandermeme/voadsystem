@@ -44,7 +44,7 @@
                                                     <button type="submit" onclick="return confirm('Are you sure to delete?')" class="btn btn-outline-primary"><i class="fa fa-close"></i></button>
                                                 </form>
                                                 <a href="{{ route('vehicles.show', $client->id) }}" class="btn btn-outline-primary">
-                                                    <i class="fa fa-eye"></i>
+                                                    <i class="fa fa-car"></i>
                                                 </a>
                                             </div>
                                         </td>

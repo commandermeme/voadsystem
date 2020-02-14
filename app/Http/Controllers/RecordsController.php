@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Record;
+use App\Vehicle;
 
 class RecordsController extends Controller
 {
@@ -54,7 +55,10 @@ class RecordsController extends Controller
      */
     public function show($id)
     {
-        //
+        $vehicle = Vehicle::find($id);
+        $records = Record::where('system_id', $vehicle->system_id)->get();
+
+        return view('records.show')->with('records', $records)->with('vehicle', $vehicle);
     }
 
     /**

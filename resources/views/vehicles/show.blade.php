@@ -39,7 +39,7 @@
                                                     @csrf
                                                     <button type="submit" onclick="return confirm('Are you sure to delete?')" class="btn btn-outline-primary"><i class="fa fa-close"></i></button>
                                                 </form>
-                                                <a href="#" class="btn btn-outline-primary"><i class="fa fa-warning"></i></a>
+                                                <a href="{{ route('records.show', $vehicle->id) }}" class="btn btn-outline-primary"><i class="fa fa-warning"></i></a>
                                             </div>
                                         </td>
                                     </tr>
