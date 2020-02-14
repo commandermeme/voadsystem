@@ -13,8 +13,8 @@
                     <i class="fa fa-users"></i> <span class="lead">Registered Clients</span>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive-xl">
-                        <table  class="table table-striped table-borderless datatable">
+                    {{-- <div class="table-responsive-xl"> --}}
+                        <table  class="table table-striped table-borderless datatable table-responsive-xl">
                             <thead>
                                 <tr>
                                     <th>Licence No.</th>
@@ -52,7 +52,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                    </div>
+                    {{-- </div> --}}
                 </div>
             </div> 
             

@@ -9,7 +9,7 @@
                     <i class="fa fa-car"></i> <span class="lead">Registered Vehicles</span>
                 </div>
                 <div class="card-body">
-                    <table  class="table table-striped table-borderless datatable">
+                    <table  class="table table-striped table-borderless datatable table-responsive-xl">
                         <thead>
                             <tr>
                                 <th>Type</th>

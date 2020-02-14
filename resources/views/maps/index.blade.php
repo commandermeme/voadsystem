@@ -134,8 +134,8 @@
                     <i class="fa fa-map-signs"></i> <span class="lead">Specific Streets</span>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive-xl">
-                        <table  class="table table-striped table-borderless datatable">
+                    {{-- <div class="table-responsive-xl"> --}}
+                        <table  class="table table-striped table-borderless datatable table-responsive-xl">
                             <thead>
                                 <tr>
                                     <th>Address</th>
@@ -155,14 +155,14 @@
                                                 @csrf
                                                 @method('DELETE')
 
-                                                <button type="submit" class="btn btn-outline-primary"><i class="fa fa-close"></i></button>
+                                                <button type="submit" onclick="return confirm('Are you sure to delete?')" class="btn btn-outline-primary"><i class="fa fa-close"></i></button>
                                             </form>
                                         </td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                    </div>
+                    {{-- </div> --}}
                 </div>
             </div>
             <div class="card">
@@ -170,8 +170,8 @@
                     <i class="fa fa-map-signs"></i> <span class="lead">Accident Prone Areas</span>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive-xl">
-                        <table  class="table table-striped table-borderless datatable">
+                    {{-- <div class="table-responsive-xl"> --}}
+                        <table  class="table table-striped table-borderless datatable table-responsive-xl">
                             <thead>
                                 <tr>
                                     <th>Area</th>
@@ -189,14 +189,14 @@
                                                 @csrf
                                                 @method('DELETE')
 
-                                                <button type="submit" class="btn btn-outline-primary"><i class="fa fa-close"></i></button>
+                                                <button type="submit" onclick="return confirm('Are you sure to delete?')" class="btn btn-outline-primary"><i class="fa fa-close"></i></button>
                                             </form>
                                         </td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                    </div>
+                    {{-- </div> --}}
                 </div>
             </div>
         </div>

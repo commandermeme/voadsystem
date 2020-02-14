@@ -9,7 +9,7 @@
                     <i class="fa fa-warning"></i> <span class="lead">Records</span>
                 </div>
                 <div class="card-body">
-                    <table  class="table table-striped table-borderless datatable">
+                    <table  class="table table-striped table-borderless datatable table-responsive-xl">
                         <thead>
                             <tr>
                                 <th>System ID</th>
@@ -29,7 +29,14 @@
                                     <td>{{ $record->location }}</td>
                                     <td>{{ $record->created_at }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-outline-primary"><i class="fa fa-close"></i></a>
+                                        <div class="btn-group">
+                                            <form action="{{ route('records.destroy', $record->id) }}" method="POST">
+                                                @method('DELETE')
+                                                @csrf
+
+                                                <button type="submit" onclick="return confirm('Are you sure to delete?')" class="btn btn-outline-primary mr-1"><i class="fa fa-close"></i></button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach

@@ -15,8 +15,8 @@
                     <i class="fa fa-car"></i> <span class="lead">Registered Vehicles of {{ $client->fname .' '. $client->lname }}</span>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive-xl">
-                        <table  class="table table-striped table-borderless datatable">
+                    {{-- <div class="table-responsive-xl"> --}}
+                        <table  class="table table-striped table-borderless datatable table-responsive-xl">
                             <thead>
                                 <tr>
                                     <th>Type</th>
@@ -46,7 +46,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                    </div>
+                    {{-- </div> --}}
                 </div>
             </div>
 
